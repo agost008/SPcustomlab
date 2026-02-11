@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Store — S&P Customs</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/app.js" defer></script>
+  <script src="js/store.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo.jpg" alt="S&P Customs logo">
+          <div>
+            <span class="name">S&P Customs</span>
+            <span class="tag">Store</span>
+          </div>
+        </a>
+
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="store.html">Store</a>
+          <a href="customize.html">Customize</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contatti</a>
+        </div>
+
+        <div class="navright">
+          <a class="iconbtn" href="cart.html">🛒 <span class="badge" data-cart-badge>0</span></a>
+          <button class="iconbtn hamburger" data-hamburger aria-label="Apri menu"><span></span></button>
+        </div>
+      </nav>
+
+      <div class="drawer" data-drawer>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="customize.html">Customize</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contatti</a>
+        <a href="cart.html">Carrello</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Store</h2>
+        <p>Drop base pronti + capi custom. Filtra e ordina, poi aggiungi al carrello.</p>
+      </div>
+
+      <div class="controls">
+        <div class="filters">
+          <button class="chip active" data-filter="all">Tutto</button>
+          <button class="chip" data-filter="sneakers">Sneakers</button>
+          <button class="chip" data-filter="apparel">Apparel</button>
+        </div>
+
+        <select id="sortSelect" class="select" aria-label="Ordina">
+          <option value="featured">Ordina: Featured</option>
+          <option value="price-asc">Prezzo: crescente</option>
+          <option value="price-desc">Prezzo: decrescente</option>
+          <option value="name-asc">Nome: A-Z</option>
+        </select>
+      </div>
+
+      <div id="productGrid" class="grid"></div>
+    </div>
+  </main>
+
+  <!-- Modal prodotto -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalGrid">
+        <div class="modalImg">
+          <img id="modalImg" src="" alt="">
+        </div>
+        <div class="modalBody">
+          <div class="modalTop">
+            <h3 id="modalTitle">Prodotto</h3>
+            <button class="close" data-close aria-label="Chiudi">✕</button>
+          </div>
+          <p id="modalDesc"></p>
+          <p style="font-weight:900; letter-spacing:.12em; margin:10px 0 0;">
+            <span id="modalPrice"></span>
+          </p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button class="btn primary" id="modalAdd">Aggiungi al carrello</button>
+            <a class="btn" href="customize.html">La voglio su misura</a>
+          </div>
+
+          <p style="color:rgba(255,255,255,.65); margin-top:12px; line-height:1.45;">
+  * Per ordinare: aggiungi al carrello e vai su Contatti.
+</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="mini">S&P Customs</div>
+          <div style="margin-top:6px;">Drop base • Handmade</div>
+        </div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="customize.html">Customize</a>
+          <a href="cart.html">Carrello</a>
+          <a href="contact.html">Contatti</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

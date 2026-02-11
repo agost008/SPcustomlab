@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customize — S&P Customs</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo.jpg" alt="S&P Customs logo">
+          <div>
+            <span class="name">S&P Customs</span>
+            <span class="tag">Customize</span>
+          </div>
+        </a>
+
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="store.html">Store</a>
+          <a href="customize.html">Customize</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contatti</a>
+        </div>
+
+        <div class="navright">
+          <a class="iconbtn" href="cart.html">🛒 <span class="badge" data-cart-badge>0</span></a>
+          <button class="iconbtn hamburger" data-hamburger aria-label="Apri menu"><span></span></button>
+        </div>
+      </nav>
+
+      <div class="drawer" data-drawer>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="customize.html">Customize</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contatti</a>
+        <a href="cart.html">Carrello</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Richiesta Custom</h2>
+    
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Come funziona</h3>
+          <div class="steps">
+            <div class="step"><div class="n">1</div><div class="t">Mi dici base, taglia, idea e budget</div></div>
+            <div class="step"><div class="n">2</div><div class="t">Noi ti risopndiamo con bozza + prezzo</div></div>
+            <div class="step"><div class="n">3</div><div class="t">Finale → lavorazione handmade</div></div>
+          </div>
+
+          <p style="margin-top:12px; color:rgba(255,255,255,.72); line-height:1.5;">
+            Se hai foto/ispirazioni, mandale su WhatsApp/IG 
+          </p>
+
+          <!-- Metti qui numero e social reali -->
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+            <a class="btn" href="https://wa.me/3317547607" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a class="btn" href="https://www.instagram.com/spcustomlab/" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Il tuo ordine</h3>
+
+          <form class="form" id="customForm">
+            <div class="formRow">
+              <div class="field">
+                <label for="name">Nome</label>
+                <input id="name" name="_toggle_name" placeholder="Es. Marco" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Es. marco@gmail.com" required />
+              </div>
+            </div>
+
+            <div class="formRow">
+              <div class="field">
+                <label for="phone">Telefono (opzionale)</label>
+                <input id="phone" placeholder="Es. 333..." />
+              </div>
+              <div class="field">
+                <label for="size">Taglia</label>
+                <input id="size" placeholder="Es. 42" required />
+              </div>
+            </div>
+
+            <div class="formRow">
+              <div class="field">
+                <label for="base">Modello base</label>
+                <select id="base" required>
+                  <option value="">Seleziona…</option>
+                  <option>Sneaker bianca (tipo AF1)</option>
+                  <option>Sneaker nera</option>
+                  <option>Altro (scrivo sotto)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="budget">Budget (EUR)</label>
+                <input id="budget" type="number" min="0" placeholder="Es. 200" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="idea">Idea / Descrizione</label>
+              <textarea id="idea" placeholder="Colori, tema, dettagli… (più scrivi meglio è)" required></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Invia richiesta (email)</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="mini">S&P Customs</div>
+          <div style="margin-top:6px;">Custom request</div>
+        </div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="store.html">Store</a>
+          <a href="contact.html">Contatti</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mailto submit (no backend)
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("customForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const size = document.getElementById("size").value.trim();
+        const base = document.getElementById("base").value.trim();
+        const budget = document.getElementById("budget").value.trim();
+        const idea = document.getElementById("idea").value.trim();
+
+        const to = "spcustoms@gmail.com"; 
+        const subject = encodeURIComponent("Richiesta CUSTOM — " + name);
+        const body = encodeURIComponent(
+`Ciao S&P Customs,
+voglio una custom su richiesta.
+
+NOME: ${name}
+EMAIL: ${email}
+TEL: ${phone || "—"}
+TAGLIA: ${size}
+MODELLO BASE: ${base}
+BUDGET: € ${budget}
+
+IDEA:
+${idea}
+
+(Se ho foto/ispirazioni le mando su WhatsApp/Instagram.)
+`
+        );
+
+        window.open(`mailto:${to}?subject=${subject}&body=${body}`, "_self");
+
+      });
+    });
+  </script>
+
+</body>
+</html>

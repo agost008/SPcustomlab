@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carrello — S&P Customs</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/app.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img src="assets/img/logo.jpg" alt="S&P Customs logo">
+          <div>
+            <span class="name">S&P Customs</span>
+            <span class="tag">Carrello</span>
+          </div>
+        </a>
+
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="store.html">Store</a>
+          <a href="customize.html">Customize</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contatti</a>
+        </div>
+
+        <div class="navright">
+          <a class="iconbtn" href="cart.html">🛒 <span class="badge" data-cart-badge>0</span></a>
+          <button class="iconbtn hamburger" data-hamburger aria-label="Apri menu"><span></span></button>
+        </div>
+      </nav>
+
+      <div class="drawer" data-drawer>
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="customize.html">Customize</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contatti</a>
+        <a href="cart.html">Carrello</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Carrello</h2>
+       </div>
+
+      <div id="cartEmpty" class="panel" style="display:none;">
+        <h3>Carrello vuoto</h3>
+        <p>Vai nello store e aggiungi qualcosa.</p>
+        <div style="margin-top:12px;">
+          <a class="btn primary" href="store.html">Vai allo Store</a>
+        </div>
+      </div>
+
+      <div id="cartList" style="display:grid; gap:12px;"></div>
+
+      <div class="panel" style="margin-top:14px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>
+          <div style="text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,.75); font-size:.85rem;">Totale</div>
+          <div style="font-weight:900; font-size:1.4rem;" id="cartTotal">€ 0,00</div>
+        </div>
+
+        <!-- Qui puoi scegliere tu: WhatsApp checkout / email / Stripe -->
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="contact.html">Concludi ordine</a>
+          <a class="btn" href="customize.html">Richiesta su misura</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="mini">S&P Customs</div>
+          <div style="margin-top:6px;">Cart</div>
+        </div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="store.html">Store</a>
+          <a href="contact.html">Contatti</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
